@@ -23,12 +23,12 @@ const GlobalNav = () => {
         </li>
         <li>
           <Link
-            href="/dashboard"
+            href="/analytics"
             className={baseClasses}
             // className={router.pathname == '/posts' ? activeClasses : baseClasses}
           >
             <PieChart size={20} />
-            Dashboard
+            Analytics
           </Link>
         </li>
         <li>
