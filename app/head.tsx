@@ -1,7 +1,7 @@
-export default function Head() {
+const Head = () => {
   return (
     <>
-      <title>Next.js Dashboard By Leland Riordan</title>
+      <title>Next Dashboard By Leland Riordan</title>
       {/* Primary Meta Tags */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -26,3 +26,5 @@ export default function Head() {
     </>
   )
 }
+
+export default Head

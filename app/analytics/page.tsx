@@ -1,20 +1,41 @@
-import Widget from "../../components/widget";
+import PageContainer from '../../components/page-container'
+import Widget from '../../components/widget'
+import PageHeader from '../../components/page-header'
+import { Search, UserPlus, Edit } from 'react-feather'
 
-export default function Page() {
+const Page = () => {
   return (
-    <div className="grid grid-cols-2 gap-4 p-4">
-      <Widget title="Performance" className='col-span-2'>
+    <PageContainer
+      className="
+      grid
+      grid-cols-1
+      grid-rows-[auto_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]
+      md:grid-cols-3
+      md:grid-rows-[auto_300px_minmax(0,_1fr)]
+      justify-items-stretch
+      gap-4"
+    >
+      <PageHeader title="Analytics" className="md:col-span-3">
+        <div className="flex gap-6">
+          <Search size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+          <UserPlus size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+          <Edit size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+        </div>
+      </PageHeader>
+      <Widget title="Performance" className='md:col-span-2'>
         <p>Placeholder</p>
       </Widget>
-      <Widget title="Orders">
+      <Widget title="Locations">
         <p>Placeholder</p>
       </Widget>
-      <Widget title="Buyers">
+      <Widget title="Demographics" className="md:col-span-2">
         <p>Placeholder</p>
       </Widget>
-      <Widget title="Performance">
+      <Widget title="Device">
         <p>Placeholder</p>
       </Widget>
-    </div>
+    </PageContainer>
   );
 }
+
+export default Page
