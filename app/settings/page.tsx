@@ -1,11 +1,38 @@
-import Widget from "../../components/widget";
+import PageContainer from '../../components/page-container'
+import Widget from '../../components/widget'
+import PageHeader from '../../components/page-header'
+import { Search, UserPlus, Edit } from 'react-feather'
 
-export default function Page() {
+const Page = () => {
   return (
-    <div className="grid grid-cols-1 grid-rows-1 gap-4 p-4">
-      <Widget title="Settings" className='col-span-2'>
-        <p>Test</p>
+    <PageContainer
+      className="
+      grid
+      grid-cols-1
+      grid-rows-[auto_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]
+      gap-4"
+    >
+      <PageHeader title="Settings" className="col-span-2">
+        <div className="flex gap-6">
+          <Search size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+          <UserPlus size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+          <Edit size={20} className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 hover:cursor-pointer dark:hover:text-indigo-500' />
+        </div>
+      </PageHeader>
+      <Widget title="Settings Section" className='col-span-2'>
+        <p>Placeholder</p>
       </Widget>
-    </div>
+      <Widget title="Settings Section" className='col-span-2'>
+        <p>Placeholder</p>
+      </Widget>
+      <Widget title="Settings Section" className='col-span-2'>
+        <p>Placeholder</p>
+      </Widget>
+      <Widget title="Settings Section" className='col-span-2'>
+        <p>Placeholder</p>
+      </Widget>
+    </PageContainer>
   );
 }
+
+export default Page
