@@ -6,17 +6,31 @@ export interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className="">
       <head />
-      <body className="h-screen grid grid-cols-[minmax(min-content,max-content)_1fr] grid-rows-[minmax(min-content,1fr)_minmax(min-content,max-content)]">
-        <Header className="row-span-2" />
-        <div className="bg-indigo-50">
+      <body
+        className="
+        text-slate-700
+        dark:text-slate-100
+        h-screen
+        bg-indigo-50
+        dark:bg-slate-900
+        grid
+        grid-cols-1
+        grid-rows-[auto_1fr]
+        md:grid-cols-[minmax(min-content,max-content)_minmax(min-content,1fr)]
+        md:grid-rows-[minmax(min-content,1fr)_auto]"
+      >
+        <Header className="md:row-span-2" />
+        <main className="overflow-auto p-2 md:p-6 ">
           {children}
-        </div>
-        <Footer className="col-span-1 col-start-2" />
+        </main>
+        <Footer className="md:col-span-1 md:col-start-2" />
       </body>
     </html>
   )
 }
+
+export default RootLayout
